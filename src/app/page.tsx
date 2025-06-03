@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
+import { X } from "lucide-react";
 
 const appName = "CC Mastery";
 const appDescription =
@@ -24,8 +26,29 @@ const screenshots = [
 ];
 
 export default function Home() {
+  const [showBanner, setShowBanner] = useState<boolean>(true);
+
   return (
     <main className="min-h-screen flex flex-col items-center px-6 pt-16 pb-4 bg-gradient-to-br from-purple-800 via-indigo-800 to-blue-900 text-white text-center">
+      {showBanner && (
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          className="relative bg-white/10 backdrop-blur-md border border-white/15 text-white text-sm sm:text-base font-medium px-4 py-2 rounded-xl shadow-md mb-6 flex items-center justify-center gap-3"
+        >
+          🎉 The app is officially live — grab it on your favorite store!
+          <button
+            onClick={() => setShowBanner(false)}
+            className=" right-3 top-2 text-white/70 hover:text-white transition"
+            aria-label="Dismiss"
+          >
+            <X size={18} />
+          </button>
+        </motion.div>
+      )}
+
       {/* Logo */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
