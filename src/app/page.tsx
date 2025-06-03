@@ -10,8 +10,10 @@ const appDescription =
   "Master ISC2 CC exam with full coverage, quizzes & progress tracking in one smart app.";
 
 const googlePlayLink =
-  "https://play.google.com/store/apps/details?id=com.example.myapp";
-const appStoreLink = "https://apps.apple.com/app/id0000000000";
+  "https://play.google.com/store/apps/details?id=com.standardsyntax.isc2ccstudyquiz";
+
+const appStoreLink =
+  "https://apps.apple.com/ca/app/cc-mastery-study-quiz-2025/id6745747218";
 
 const screenshots = [
   "/screenshots/screenshot1.png",
